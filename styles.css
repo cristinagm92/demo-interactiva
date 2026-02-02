@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    background-color: #000;
+    color: #eee;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+select, button {
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 6px;
+    border: none;
+    background: #222;
+    color: #eee;
+}
+
+button {
+    cursor: pointer;
+}
+
+.rol {
+    cursor: pointer;
+    color: #0f0;
+}
+
+.oculto {
+    display: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px 20px;
+    background: #111;
+    margin: 8px 0;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+/* ============================
+   SELECTS RESPONSIVOS
+   ============================ */
+
+.select-grande {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.select-grande select {
+    width: 80%;
+    font-size: 22px;
+    padding: 14px 20px;
+}
+
+/* ============================
+   MÓVIL
+   ============================ */
+
+@media (max-width: 768px) {
+
+    .container {
+        transform: scale(1.05);
+        transform-origin: top center;
+    }
+
+    select, button {
+        width: 90%;
+        font-size: 26px;
+        padding: 22px 28px;
+        border-radius: 12px;
+        border: 3px solid #666;
+        background: #1c1c1c;
+        font-weight: bold;
+    }
+
+    #rolTexto {
+        font-size: 32px;
+        padding: 26px;
+        text-align: center;
+    }
+
+    li {
+        width: 90%;
+        font-size: 24px;
+        padding: 20px 26px;
+        border-radius: 12px;
+    }
+}
+
+/* ============================
+   BOTÓN DE SONIDO
+   ============================ */
+
+.btn-sonido {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #eee;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.btn-sonido:active {
+    transform: scale(0.9);
+}
+
+/* ============================
+   ANIMACIÓN DE TRANSICIÓN
+   ============================ */
+
+#transicion {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    z-index: 9998;
+    pointer-events: none;
+    transition: top 0.4s ease-out, opacity 0.4s ease-out;
+    opacity: 1;
+}
+
+#transicion.activa {
+    top: 0;
+}
+
+#transicion.fadeout {
+    opacity: 0;
+}
+/* Animación del texto "Empieza el jugador X" */
+@keyframes anuncioJugador {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        text-shadow: 0 0 0px #0f0;
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1.15);
+        text-shadow: 0 0 12px #0f0;
+    }
+    70% {
+        transform: scale(1.0);
+        text-shadow: 0 0 6px #0f0;
+    }
+    100% {
+        opacity: 0.9;
+        text-shadow: 0 0 2px #0f0;
+    }
+}
+
+.anuncio-jugador {
+    animation: anuncioJugador 1.2s ease-out forwards;
+    font-size: 28px;
+    font-weight: bold;
+    color: #0f0;
+    margin-bottom: 10px;
+}

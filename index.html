@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Impostores</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="bannner.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta property="og:title" content="Juego de Impostores" />
+<meta property="og:description" content="Un juego web divertido, ligero y accesible inspirado en un clásico familiar." />
+<meta property="og:image" content="https://tusitio.com/imagen-promocional.jpg" />
+<meta property="og:url" content="https://cristinagm92.github.io/Impostor-Anime/" />
+
+</head>
+<body>
+
+<button id="btnSonido" onclick="toggleSonido()" class="btn-sonido">🔊</button>
+
+<div id="inicio" class="container">
+    <h1>Juego de Impostores</h1>
+
+    <div class="select-grande">
+        <select id="numJugadores">
+            <option value="">Jugadores</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+    </div>
+
+    <div class="select-grande">
+        <select id="numImpostores">
+            <option value="">Impostores</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+    </div>
+
+    <button onclick="iniciarJuego()">Iniciar</button>
+</div>
+
+<div id="juego" class="container oculto">
+    <h2 id="jugadorTexto"></h2>
+    <p id="rolTexto" class="rol" onclick="mostrarRol()">Toca para ver tu rol</p>
+    <button id="btnSiguiente" class="oculto" onclick="siguienteJugador()">Siguiente</button>
+
+    <audio id="sonidoRol" src="suspense-248067.mp3"></audio>
+</div>
+
+<div id="final" class="container oculto">
+    <h2>Resultados</h2>
+    <ul id="listaJugadores"></ul>
+</div>
+
+<!-- Capa de transición -->
+<div id="transicion"></div>
+
+<script src="script.js"></script>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/Impostor-Anime/service-worker.js")
+      .then(() => console.log("Service Worker registrado"))
+      .catch(err => console.error("Error al registrar SW:", err));
+  }
+</script>
+
+</body>
+</html>

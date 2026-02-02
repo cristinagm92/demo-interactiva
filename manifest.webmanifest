@@ -1,0 +1,39 @@
+{
+  "name": "Impostor Anime",
+  "short_name": "Impostor",
+  "start_url": "/Impostor-Anime/index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "orientation": "portrait",
+  "description": "Juego de impostores estilo anime. Descubre quién miente y gana la partida.",
+  "version": "1.1.0",
+  "version_code": 2,
+  "id": "https://cristinagm92.github.io/Impostor-Anime",
+  "categories": ["game", "entertainment"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/Impostor-Anime/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Impostor-Anime/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/Impostor-Anime/screenshot1.png",
+      "sizes": "640x480",
+      "type": "image/png"
+    },
+    {
+      "src": "/Impostor-Anime/screenshot2.png",
+      "sizes": "640x480",
+      "type": "image/png"
+    }
+  ]
+}
